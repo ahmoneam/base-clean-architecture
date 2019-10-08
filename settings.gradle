@@ -1,2 +1,2 @@
-include ':app', ':basecleanarchitecture'
-rootProject.name='BaseApplication'
+include ':basecleanarchitecture'
+rootProject.name = 'BaseApplication'
