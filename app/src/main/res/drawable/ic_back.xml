@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <rotate android:fromDegrees="90" android:toDegrees="270">
+            <bitmap android:autoMirrored="true" android:src="@drawable/icon_navigation_back" />
+        </rotate>
+    </item>
+</selector>

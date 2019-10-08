@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">moneam</string>
+    <string name="MainActivity.message_check_mobile_number">التحقق من رقم الجوال</string>
+    <string name="MainActivity.message_check_date">التحقق من رقم الجوال</string>
+</resources>

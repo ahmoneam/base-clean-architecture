@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+androidExtensions {
+    experimental = true
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = 1.8
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // Androidx
+    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'androidx.core:core-ktx:1.1.0'
+    api "androidx.security:security-crypto:1.0.0-alpha02"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0-alpha05"
+
+    // Json Parser
+    api 'com.google.code.gson:gson:2.8.5'
+
+    // Network
+    api 'com.squareup.okhttp3:okhttp:4.2.1'
+    api 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+    api 'com.squareup.retrofit2:retrofit:2.6.2'
+    api 'com.squareup.retrofit2:converter-gson:2.6.2'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'
+
+    // Dependency Injection Koin
+    api 'org.koin:koin-core:2.0.1'
+    api "org.koin:koin-android:2.0.1"
+    api "org.koin:koin-androidx-ext:2.0.1"
+    api "org.koin:koin-androidx-scope:2.0.1"
+    api "org.koin:koin-androidx-viewmodel:2.0.1"
+
+    // Logging
+    api 'com.jakewharton.timber:timber:4.7.1'
+    api 'com.orhanobut:logger:2.2.0'
+
+    // Testing
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
